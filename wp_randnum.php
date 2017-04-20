@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Random number shortcode
  * Plugin URI:        https://github.com/pforret/wp_randnum
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       provides the [randnum] shortcode to add random numbers in text/URLs
  * Version:           1.0.0
  * Author:            Peter Forret
  * Author URI:        http://blog.forret.com
@@ -30,46 +30,19 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-/**
- * The code that runs during plugin activation.
- * This action is documented in includes/class-wp_randnum-activator.php
- */
-function activate_wp_randnum() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp_randnum-activator.php';
-	Wp_randnum_Activator::activate();
+
+function randnum_generate($atts){
+	extract(shortcode_atts(array(
+		'min' => 0,
+		'max' => 100000,
+		), $atts));
+	$return_string=rand ( $min , $max );
+	return $return_string;
 }
 
-/**
- * The code that runs during plugin deactivation.
- * This action is documented in includes/class-wp_randnum-deactivator.php
- */
-function deactivate_wp_randnum() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp_randnum-deactivator.php';
-	Wp_randnum_Deactivator::deactivate();
+function randnum_register(){
+   add_shortcode('randnum', 'randnum_generate');
 }
 
-register_activation_hook( __FILE__, 'activate_wp_randnum' );
-register_deactivation_hook( __FILE__, 'deactivate_wp_randnum' );
+add_action( 'init', 'randnum_register');
 
-/**
- * The core plugin class that is used to define internationalization,
- * admin-specific hooks, and public-facing site hooks.
- */
-require plugin_dir_path( __FILE__ ) . 'includes/class-wp_randnum.php';
-
-/**
- * Begins execution of the plugin.
- *
- * Since everything within the plugin is registered via hooks,
- * then kicking off the plugin from this point in the file does
- * not affect the page life cycle.
- *
- * @since    1.0.0
- */
-function run_wp_randnum() {
-
-	$plugin = new Wp_randnum();
-	$plugin->run();
-
-}
-run_wp_randnum();
