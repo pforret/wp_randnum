@@ -1,14 +1,14 @@
 === Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
+Contributors: pforret
 Donate link: http://blog.forret.com
-Tags: random, number, shortcode
+Tags: random, number, shortcode, rand
 Requires at least: 3.0.1
 Tested up to: 3.4
 Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-provides the [randnum] shortcode to add random numbers in text/URLs
+provides the [randnum] shortcode to add random numbers in text/URLs.
 
 == Description ==
 
@@ -17,7 +17,7 @@ provides the [randnum] shortcode to add random numbers in text/URLs
 * the link '/test/?num=[randnum]' will never be cached
 
 Default min = 0
-Default max = 10000
+Default max = 100000
 
 == Installation ==
 
@@ -29,8 +29,12 @@ Default max = 10000
 
 = How does this work  =
 
-This is a pretty wrapper around the php `rand` function. That's where the magic happens. [http://php.net/manual/en/function.rand.php](http://php.net/manual/en/function.rand.php)
+This is just a simple wrapper around the php `rand` function. That's where the magic happens. 
+[http://php.net/manual/en/function.rand.php](http://php.net/manual/en/function.rand.php)
 
+= But why would I need that? =
+
+I created because I needed an easy way to generate random URL params (to avoid caching).
 
 
 == Changelog ==
