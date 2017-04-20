@@ -6,8 +6,8 @@
  * @link       http://blog.forret.com
  * @since      1.0.0
  *
- * @package    Randnum
- * @subpackage Randnum/admin
+ * @package    Wp_randnum
+ * @subpackage Wp_randnum/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Randnum
- * @subpackage Randnum/admin
+ * @package    Wp_randnum
+ * @subpackage Wp_randnum/admin
  * @author     Peter Forret <peter@forret.com>
  */
-class Randnum_Admin {
+class Wp_randnum_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -65,15 +65,15 @@ class Randnum_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Randnum_Loader as all of the hooks are defined
+		 * defined in Wp_randnum_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Randnum_Loader will then create the relationship
+		 * The Wp_randnum_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/randnum-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp_randnum-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -88,15 +88,15 @@ class Randnum_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Randnum_Loader as all of the hooks are defined
+		 * defined in Wp_randnum_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Randnum_Loader will then create the relationship
+		 * The Wp_randnum_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/randnum-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp_randnum-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 

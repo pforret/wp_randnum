@@ -6,8 +6,8 @@
  * @link       http://blog.forret.com
  * @since      1.0.0
  *
- * @package    Randnum
- * @subpackage Randnum/includes
+ * @package    Wp_randnum
+ * @subpackage Wp_randnum/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Randnum
- * @subpackage Randnum/includes
+ * @package    Wp_randnum
+ * @subpackage Wp_randnum/includes
  * @author     Peter Forret <peter@forret.com>
  */
-class Randnum_Loader {
+class Wp_randnum_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

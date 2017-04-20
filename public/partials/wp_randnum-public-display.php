@@ -8,8 +8,8 @@
  * @link       http://blog.forret.com
  * @since      1.0.0
  *
- * @package    Randnum
- * @subpackage Randnum/public/partials
+ * @package    Wp_randnum
+ * @subpackage Wp_randnum/public/partials
  */
 ?>
 

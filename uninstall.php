@@ -22,7 +22,7 @@
  * @link       http://blog.forret.com
  * @since      1.0.0
  *
- * @package    Randnum
+ * @package    Wp_randnum
  */
 
 // If uninstall not called from WordPress, then exit.
